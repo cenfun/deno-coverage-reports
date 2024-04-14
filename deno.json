@@ -1,0 +1,7 @@
+{
+  "tasks": {
+    "dev": "deno run --watch src/main.ts",
+    "test": "deno test --coverage",
+    "coverage": "deno run --allow-env --allow-read --allow-sys --allow-write tasks/coverage-report.js"
+  }
+}
