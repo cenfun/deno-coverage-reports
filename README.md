@@ -5,13 +5,14 @@ Deno coverage reports
 ## Example generating Deno coverage reports with MCR
 
 ```js
-import MCR from "npm:monocart-coverage-reports";
+import MCR from "npm:monocart-coverage-reports@latest";
 import { fileURLToPath } from "node:url";
 
 const mcr = MCR({
+  //logging: "debug",
   name: "My Deno Coverage Report",
   outputDir: "./coverage-reports/",
-  logging: "debug",
+  reports: ["v8", "console-details"],
 });
 
 const coverageList = [];
