@@ -1,10 +1,10 @@
-import MCR from "npm:monocart-coverage-reports";
+import MCR from "npm:monocart-coverage-reports@latest";
 import { fileURLToPath } from "node:url";
 
 const mcr = MCR({
   name: "My Deno Coverage Report",
   outputDir: "./coverage-reports/",
-  logging: "debug",
+  //logging: "debug",
 });
 
 const coverageList = [];
