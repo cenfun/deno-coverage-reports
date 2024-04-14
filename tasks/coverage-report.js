@@ -15,10 +15,9 @@ for (const dirEntry of Deno.readDirSync(coverageDataDir)) {
   const fileCoverage = JSON.parse(data);
   if (fileCoverage.url.startsWith("file://")) {
     const source = Deno.readTextFileSync(fileURLToPath(fileCoverage.url));
-    // NOTE:
+    // NOTE: It requires transpiled source code and sourcemap. Unfortunately, Deno doesn't provide.
     // The source is original code not transpiled code.
     // Because of the offset in coverage is mapping to transpiled code. So, the source is wrong here.
-    // It requires transpiled source code and sourcemap. Unfortunately, Deno doesn't provide.
     fileCoverage.source = source;
     coverageList.push(fileCoverage);
   }
